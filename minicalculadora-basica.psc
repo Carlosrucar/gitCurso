@@ -10,6 +10,7 @@ Algoritmo minicalculadorabasica
 	Escribir "1 - Suma";
 	Escribir "2 - Resta";
 	Escribir "3 - Multiplicación";
+	Escribir "4 - División";
 	Leer opcion;
 	
 	Si (opcion = 1) Entonces
@@ -24,7 +25,16 @@ Algoritmo minicalculadorabasica
 				num_res = num_a * num_b;
 				Escribir "El producto de ", num_a, " y ", num_b, " es ", num_res;
 			Sino
-				Escribir "Esa operación no está permitida";
+				Si (opcion = 4) Entonces
+					Si (num_b <> 0) Entonces
+						num_res = num_a / num_b;
+						Escribir "La división de ", num_a, " entre ", num_b, " es ", num_res;
+					Sino
+						Escribir "No se puede dividir entre cero.";
+					FinSi
+				Sino
+					Escribir "Operación no permitida";
+				FinSi
 			FinSi
 		FinSi
 	FinSi
